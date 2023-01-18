@@ -189,6 +189,7 @@ def fileNameSet(dataNum, cameraNum, currentFileName):
             saveFileName = str(cameraNumList[cameraNum]).replace("_3", "_4")
         else:
             saveFileName = str(cameraNumList[cameraNum]) + "_1"
+    saveFileName = str(cameraNumList[cameraNum]) + "_3"
     cameraNumList[cameraNum] = saveFileName
     return saveFileName
 
@@ -204,13 +205,13 @@ def saveAuto(dataNum):
     pyautogui.sleep(0.5)
 
     if dataInfolist[dataNum]["start"] != "-":
-        pyautogui.move(220, -657)
+        pyautogui.moveTo(1100, 213)
         pyautogui.click()
         timelist = dataInfolist[dataNum]["start"].split(":")
         pyautogui.write([timelist[0][0], timelist[0][1], "right", timelist[1][0], timelist[1][1], "right",
                          timelist[2][0], timelist[2][1]], interval=0.2)
     if dataInfolist[dataNum]["end"] != "-":
-        pyautogui.move(220, -637)
+        pyautogui.moveTo(1100, 238)
         pyautogui.click()
         timelist = dataInfolist[dataNum]["end"].split(":")
         pyautogui.write([timelist[0][0], timelist[0][1], "right", timelist[1][0], timelist[1][1], "right",
