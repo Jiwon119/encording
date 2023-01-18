@@ -189,7 +189,6 @@ def fileNameSet(dataNum, cameraNum, currentFileName):
             saveFileName = str(cameraNumList[cameraNum]).replace("_3", "_4")
         else:
             saveFileName = str(cameraNumList[cameraNum]) + "_1"
-    saveFileName = str(cameraNumList[cameraNum]) + "_3"
     cameraNumList[cameraNum] = saveFileName
     return saveFileName
 
