@@ -67,6 +67,7 @@ def SaveCompleted(saveFileName, userName):
     camerapath = "C:/Users/KimJiwon/Desktop/test/" + userName + "/" + cameranum
     path = "C:/Users/KimJiwon/Desktop/test/" + userName
     pyperclip.copy(camerapath)
+    pyautogui.sleep(1)
     pyautogui.hotkey('ctrl', 'v')
     pyautogui.press('enter')
 
