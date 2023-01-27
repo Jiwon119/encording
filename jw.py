@@ -22,12 +22,12 @@ fileHandler = logging.FileHandler(filename, encoding="utf-8")
 fileHandler.setFormatter(logFormatter)
 logger.addHandler(fileHandler)
 
-cameraNumList = [161, 162, 163, 164, 165, 166, 167,
-                 168, 233, 234, 235, 236, 237, 238, 239, 240]
+cameraNumList = [217, 218, 219, 220, 221, 222, 223,
+                 224, 225, 226, 227, 228, 229, 230, 231, 232]
 
 # region csv 파일 읽기
 data = list()
-f = open("C:/Users/KimJiwon/Desktop/list.csv", 'r', encoding='cp949')
+f = open("C:/Users/KimJiwon/Desktop/29.csv", 'r', encoding='utf-8')
 listInfo = csv.DictReader(f)
 f.close
 
@@ -64,8 +64,8 @@ def SaveCompleted(saveFileName, userName):
     pyautogui.hotkey('alt', 'd')
     pyautogui.sleep(2)
     cameranum = saveFileName[0:3]
-    camerapath = "C:/Users/KimJiwon/Desktop/test/" + userName + "/" + cameranum
-    path = "C:/Users/KimJiwon/Desktop/test/" + userName
+    camerapath = "D:/이화여대/학생/12.27/" + userName + "/" + cameranum
+    path = "D:/이화여대/학생/12.27/" + userName
     pyperclip.copy(camerapath)
     pyautogui.sleep(1)
     pyautogui.hotkey('ctrl', 'v')
@@ -94,7 +94,7 @@ def SaveCompleted(saveFileName, userName):
                 os.mkdir(newpath)
             pyautogui.sleep(1)
             pyautogui.hotkey('alt', 'd')
-            camerapath = "C:/Users/KimJiwon/Desktop/test/" + userName + "/" + cameranum
+            camerapath = "D:/이화여대/학생/12.27/" + userName + "/" + cameranum
             pyperclip.copy(camerapath)
             pyautogui.hotkey('ctrl', 'v')
             pyautogui.sleep(1)
@@ -196,7 +196,7 @@ def fileNameSet(dataNum, cameraNum, currentFileName):
 
 def saveAuto(dataNum):
     # 파일이 선택되고 실행되었을때 동영상 저장 탭으로 이동
-    pyautogui.moveTo(600, 230)
+    pyautogui.moveTo(6000, 230)
     pyautogui.move(280, 560)
     pyautogui.click()
     pyautogui.move(0, 80)
@@ -232,11 +232,49 @@ for i in dataInfolist:
     pyautogui.sleep(3)
     os.startfile('"{}"'.format(i["FilePath"]))
     pyautogui.sleep(3)
-    saveAuto(num)
-    num += 1
-    pyautogui.hotkey('esc')
-    pyautogui.hotkey('alt', 'f4')
-    logger.info(f"{i['FilePath']} encording end")
+
+    pyautogui.moveTo(938, 230)
+    pyautogui.mouseDown()
+    pyautogui.move(-500, 200)
+    pyautogui.mouseUp()
+
+    print(i["FilePath"])
+    logger.info(f"{i['FilePath']} encording start")
+    pyautogui.sleep(3)
+    os.startfile('"{}"'.format(i["FilePath"]))
+    pyautogui.sleep(3)
+
+    pyautogui.moveTo(938, 230)
+    pyautogui.mouseDown()
+    pyautogui.move(500, 200)
+    pyautogui.mouseUp()
+
+    print(i["FilePath"])
+    logger.info(f"{i['FilePath']} encording start")
+    pyautogui.sleep(3)
+    os.startfile('"{}"'.format(i["FilePath"]))
+    pyautogui.sleep(3)
+
+    pyautogui.moveTo(938, 230)
+    pyautogui.mouseDown()
+    pyautogui.move(-500, -200)
+    pyautogui.mouseUp()
+
+    print(i["FilePath"])
+    logger.info(f"{i['FilePath']} encording start")
+    pyautogui.sleep(3)
+    os.startfile('"{}"'.format(i["FilePath"]))
+    pyautogui.sleep(3)
+
+    pyautogui.moveTo(938, 230)
+    pyautogui.mouseDown()
+    pyautogui.move(500, -200)
+    pyautogui.mouseUp()
+    # saveAuto(num)
+    # num += 1
+    # pyautogui.hotkey('esc')
+    # pyautogui.hotkey('alt', 'f4')
+    # logger.info(f"{i['FilePath']} encording end")
 
 # region 주석
 
